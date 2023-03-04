@@ -1,9 +1,7 @@
-package com.conditions.boundary.BoundaryConditions
+package com.conditions.boundary.boundaryconditions
 
 import org.springframework.stereotype.Component
-import java.math.BigInteger
 import java.util.*
-import kotlin.math.pow
 
 @Component
 class StringBoundary: Boundary<String, String> {

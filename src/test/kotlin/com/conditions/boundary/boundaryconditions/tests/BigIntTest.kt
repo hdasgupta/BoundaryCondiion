@@ -1,49 +1,50 @@
-package com.conditions.boundary.BoundaryConditions.tests
+package com.conditions.boundary.boundaryconditions.tests
 
-import com.conditions.boundary.BoundaryConditions.wrapper.*
+import com.conditions.boundary.boundaryconditions.wrapper.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
+import java.math.BigInteger
 
 @SpringBootTest
-class LongTest {
+class BigIntTest {
 
-    val a = 6L
-    val b = 2L
+    val a = BigInteger("6")
+    val b = BigInteger("2")
 
     @Test
     fun addTest() {
-        Assertions.assertEquals(add(a, b), 8L)
+        Assertions.assertEquals(add(a, b), BigInteger("8"))
     }
 
     @Test
     fun subTest() {
-        Assertions.assertEquals(sub(a, b), 4L)
+        Assertions.assertEquals(sub(a, b), BigInteger("4"))
     }
 
     @Test
     fun mulTest() {
-        Assertions.assertEquals(mul(a, b), 12L)
+        Assertions.assertEquals(mul(a, b), BigInteger("12"))
     }
 
     @Test
     fun divTest() {
-        Assertions.assertEquals(div(a, b), 3L)
+        Assertions.assertEquals(div(a, b), BigInteger("3"))
     }
 
     @Test
     fun powTest() {
-        Assertions.assertEquals(pow(a, b), 36L)
+        Assertions.assertEquals(pow(a, b), BigInteger("36"))
     }
 
     @Test
     fun minTest() {
-        Assertions.assertEquals(min(a, b), 2L)
+        Assertions.assertEquals(min(a, b), BigInteger("2"))
     }
 
     @Test
     fun maxTest() {
-        Assertions.assertEquals(max(a, b), 6L)
+        Assertions.assertEquals(max(a, b), BigInteger("6"))
     }
 
     @Test
@@ -85,6 +86,6 @@ class LongTest {
     fun sortTest() {
         val list = listOf(a, b)
         sort(list)
-        Assertions.assertArrayEquals(list.toTypedArray(), arrayOf(2L, 6L))
+        Assertions.assertArrayEquals(list.toTypedArray(), arrayOf(b, a))
     }
 }

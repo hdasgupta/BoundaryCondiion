@@ -1,7 +1,7 @@
-package com.conditions.boundary.BoundaryConditions.wrapper
+package com.conditions.boundary.boundaryconditions.wrapper
 
-import com.conditions.boundary.BoundaryConditions.BaseBoundary
-import com.conditions.boundary.BoundaryConditions.Boundary
+import com.conditions.boundary.boundaryconditions.BaseBoundary
+import com.conditions.boundary.boundaryconditions.Boundary
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationContext
 import org.springframework.context.ApplicationContextAware

@@ -1,49 +1,50 @@
-package com.conditions.boundary.BoundaryConditions.tests
+package com.conditions.boundary.boundaryconditions.tests
 
-import com.conditions.boundary.BoundaryConditions.wrapper.*
+import com.conditions.boundary.boundaryconditions.wrapper.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
+import java.math.BigDecimal
 
 @SpringBootTest
-class IntTest {
+class BigDoubleTest {
 
-    val a = 6
-    val b = 2
+    val a = BigDecimal("6.0")
+    val b = BigDecimal("2.0")
 
     @Test
     fun addTest() {
-        Assertions.assertEquals(add(a, b), 8)
+        Assertions.assertEquals(add(a, b), BigDecimal("8.0"))
     }
 
     @Test
     fun subTest() {
-        Assertions.assertEquals(sub(a, b), 4)
+        Assertions.assertEquals(sub(a, b), BigDecimal("4.0"))
     }
 
     @Test
     fun mulTest() {
-        Assertions.assertEquals(mul(a, b), 12)
+        Assertions.assertEquals(mul(a, b), BigDecimal("12.00"))
     }
 
     @Test
     fun divTest() {
-        Assertions.assertEquals(div(a, b), 3)
+        Assertions.assertEquals(div(a, b), BigDecimal("3.0"))
     }
 
     @Test
     fun powTest() {
-        Assertions.assertEquals(pow(a, b), 36)
+        Assertions.assertEquals(pow(a, b), BigDecimal("36.00"))
     }
 
     @Test
     fun minTest() {
-        Assertions.assertEquals(min(a, b), 2)
+        Assertions.assertEquals(min(a, b), BigDecimal("2.0"))
     }
 
     @Test
     fun maxTest() {
-        Assertions.assertEquals(max(a, b), 6)
+        Assertions.assertEquals(max(a, b), BigDecimal("6.0"))
     }
 
     @Test
@@ -85,6 +86,6 @@ class IntTest {
     fun sortTest() {
         val list = listOf(a, b)
         sort(list)
-        Assertions.assertArrayEquals(list.toTypedArray(), arrayOf(2, 6))
+        Assertions.assertArrayEquals(list.toTypedArray(), arrayOf(b, a))
     }
 }

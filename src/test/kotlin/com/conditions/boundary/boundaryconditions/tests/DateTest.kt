@@ -1,50 +1,37 @@
-package com.conditions.boundary.BoundaryConditions.tests
+package com.conditions.boundary.boundaryconditions.tests
 
-import com.conditions.boundary.BoundaryConditions.wrapper.*
+import com.conditions.boundary.boundaryconditions.wrapper.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
-import java.math.BigDecimal
+import java.time.LocalDateTime
+import java.time.ZoneOffset
+import java.util.*
 
 @SpringBootTest
-class BigDoubleTest {
+class DateTest {
 
-    val a = BigDecimal("6.0")
-    val b = BigDecimal("2.0")
+    val a = Date(LocalDateTime.of(2023,2,28,12,30, 0).toEpochSecond(ZoneOffset.UTC)*1000)
+    val b = Date(LocalDateTime.of(2022,10,2,17,0, 0).toEpochSecond(ZoneOffset.UTC)*1000)
 
     @Test
     fun addTest() {
-        Assertions.assertEquals(add(a, b), BigDecimal("8.0"))
+        Assertions.assertEquals(add(a, b).time, 3342317400000)
     }
 
     @Test
     fun subTest() {
-        Assertions.assertEquals(sub(a, b), BigDecimal("4.0"))
-    }
-
-    @Test
-    fun mulTest() {
-        Assertions.assertEquals(mul(a, b), BigDecimal("12.00"))
-    }
-
-    @Test
-    fun divTest() {
-        Assertions.assertEquals(div(a, b), BigDecimal("3.0"))
-    }
-
-    @Test
-    fun powTest() {
-        Assertions.assertEquals(pow(a, b), BigDecimal("36.00"))
+        Assertions.assertEquals(sub(a, b).time, 12857400000)
     }
 
     @Test
     fun minTest() {
-        Assertions.assertEquals(min(a, b), BigDecimal("2.0"))
+        Assertions.assertEquals(min(a, b).time, 1664730000000)
     }
 
     @Test
     fun maxTest() {
-        Assertions.assertEquals(max(a, b), BigDecimal("6.0"))
+        Assertions.assertEquals(max(a, b).time, 1677587400000)
     }
 
     @Test

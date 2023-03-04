@@ -1,49 +1,49 @@
-package com.conditions.boundary.BoundaryConditions.tests
+package com.conditions.boundary.boundaryconditions.tests
 
-import com.conditions.boundary.BoundaryConditions.wrapper.*
+import com.conditions.boundary.boundaryconditions.wrapper.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class DoubleTest {
+class LongTest {
 
-    val a = 6.0
-    val b = 2.0
+    val a = 6L
+    val b = 2L
 
     @Test
     fun addTest() {
-        Assertions.assertEquals(add(a, b), 8.0)
+        Assertions.assertEquals(add(a, b), 8L)
     }
 
     @Test
     fun subTest() {
-        Assertions.assertEquals(sub(a, b), 4.0)
+        Assertions.assertEquals(sub(a, b), 4L)
     }
 
     @Test
     fun mulTest() {
-        Assertions.assertEquals(mul(a, b), 12.0)
+        Assertions.assertEquals(mul(a, b), 12L)
     }
 
     @Test
     fun divTest() {
-        Assertions.assertEquals(div(a, b), 3.0)
+        Assertions.assertEquals(div(a, b), 3L)
     }
 
     @Test
     fun powTest() {
-        Assertions.assertEquals(pow(a, b), 36.0)
+        Assertions.assertEquals(pow(a, b), 36L)
     }
 
     @Test
     fun minTest() {
-        Assertions.assertEquals(min(a, b), 2.0)
+        Assertions.assertEquals(min(a, b), 2L)
     }
 
     @Test
     fun maxTest() {
-        Assertions.assertEquals(max(a, b), 6.0)
+        Assertions.assertEquals(max(a, b), 6L)
     }
 
     @Test
@@ -85,6 +85,6 @@ class DoubleTest {
     fun sortTest() {
         val list = listOf(a, b)
         sort(list)
-        Assertions.assertArrayEquals(list.toTypedArray(), arrayOf(2.0, 6.0))
+        Assertions.assertArrayEquals(list.toTypedArray(), arrayOf(2L, 6L))
     }
 }

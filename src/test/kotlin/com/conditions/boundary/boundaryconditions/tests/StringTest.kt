@@ -1,13 +1,9 @@
-package com.conditions.boundary.BoundaryConditions.tests
+package com.conditions.boundary.boundaryconditions.tests
 
-import com.conditions.boundary.BoundaryConditions.wrapper.*
+import com.conditions.boundary.boundaryconditions.wrapper.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.ZoneOffset
-import java.util.Date
 
 @SpringBootTest
 class StringTest {

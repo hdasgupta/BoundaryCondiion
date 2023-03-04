@@ -1,38 +1,49 @@
-package com.conditions.boundary.BoundaryConditions.tests
+package com.conditions.boundary.boundaryconditions.tests
 
-import com.conditions.boundary.BoundaryConditions.wrapper.*
+import com.conditions.boundary.boundaryconditions.wrapper.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.ZoneOffset
-import java.util.Date
 
 @SpringBootTest
-class DateTest {
+class IntTest {
 
-    val a = Date(LocalDateTime.of(2023,2,28,12,30, 0).toEpochSecond(ZoneOffset.UTC)*1000)
-    val b = Date(LocalDateTime.of(2022,10,2,17,0, 0).toEpochSecond(ZoneOffset.UTC)*1000)
+    val a = 6
+    val b = 2
 
     @Test
     fun addTest() {
-        Assertions.assertEquals(add(a, b).time, 3342317400000)
+        Assertions.assertEquals(add(a, b), 8)
     }
 
     @Test
     fun subTest() {
-        Assertions.assertEquals(sub(a, b).time, 12857400000)
+        Assertions.assertEquals(sub(a, b), 4)
+    }
+
+    @Test
+    fun mulTest() {
+        Assertions.assertEquals(mul(a, b), 12)
+    }
+
+    @Test
+    fun divTest() {
+        Assertions.assertEquals(div(a, b), 3)
+    }
+
+    @Test
+    fun powTest() {
+        Assertions.assertEquals(pow(a, b), 36)
     }
 
     @Test
     fun minTest() {
-        Assertions.assertEquals(min(a, b).time, 1664730000000)
+        Assertions.assertEquals(min(a, b), 2)
     }
 
     @Test
     fun maxTest() {
-        Assertions.assertEquals(max(a, b).time, 1677587400000)
+        Assertions.assertEquals(max(a, b), 6)
     }
 
     @Test
@@ -74,6 +85,6 @@ class DateTest {
     fun sortTest() {
         val list = listOf(a, b)
         sort(list)
-        Assertions.assertArrayEquals(list.toTypedArray(), arrayOf(b, a))
+        Assertions.assertArrayEquals(list.toTypedArray(), arrayOf(2, 6))
     }
 }

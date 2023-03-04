@@ -1,4 +1,4 @@
-package com.conditions.boundary.BoundaryConditions
+package com.conditions.boundary.boundaryconditions
 
 interface Boundary<T, U> {
     fun add(a: T, b: U): T

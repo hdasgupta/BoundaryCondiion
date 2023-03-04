@@ -1,4 +1,4 @@
-package com.conditions.boundary.BoundaryConditions
+package com.conditions.boundary.boundaryconditions
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,7 +7,7 @@ import org.springframework.boot.runApplication
 class BoundaryConditionsApplication
 
 fun main(args: Array<String>) {
-	val ac = runApplication<BoundaryConditionsApplication>(*args)
+	runApplication<BoundaryConditionsApplication>(*args)
 
 }
 

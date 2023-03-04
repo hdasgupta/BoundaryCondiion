@@ -1,9 +1,8 @@
-package com.conditions.boundary.BoundaryConditions
+package com.conditions.boundary.boundaryconditions
 
 import org.springframework.stereotype.Component
 import java.math.BigInteger
-import java.util.Collections
-import kotlin.math.pow
+import java.util.*
 
 @Component
 class BigIntBoundary: BaseBoundary<BigInteger> {
