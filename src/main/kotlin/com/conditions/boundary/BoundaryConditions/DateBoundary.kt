@@ -1,12 +1,15 @@
 package com.conditions.boundary.BoundaryConditions
 
+import org.springframework.stereotype.Component
+import java.math.BigInteger
 import java.util.*
 import kotlin.math.pow
 
-class DateBoundary: Boundary<Date, Long> {
-    override fun add(a: Date, b: Long): Date = Date(a.time+b)
+@Component
+class DateBoundary: Boundary<Date, Date> {
+    override fun add(a: Date, b: Date): Date = Date(a.time+b.time)
 
-    override fun sub(a: Date, b: Long): Date = Date(a.time-b)
+    override fun sub(a: Date, b: Date): Date = Date(a.time-b.time)
 
     override fun min(a: Date, b: Date): Date = if(a < b) a else b
 
@@ -27,4 +30,7 @@ class DateBoundary: Boundary<Date, Long> {
     override fun comp(a: Date, b: Date): Long = a.compareTo(b).toLong()
 
     override fun sort(list: List<Date>) = Collections.sort(list)
+
+    override fun type(): String =
+        Date::class.simpleName!!
 }

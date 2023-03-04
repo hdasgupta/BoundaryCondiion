@@ -1,9 +1,12 @@
 package com.conditions.boundary.BoundaryConditions
 
+import org.springframework.stereotype.Component
+import java.math.BigInteger
 import java.util.*
 import kotlin.math.pow
 
-class StringBoundary: Boundary<String, Long> {
+@Component
+class StringBoundary: Boundary<String, String> {
 
     override fun min(a: String, b: String): String = if(a < b) a else b
 
@@ -25,11 +28,10 @@ class StringBoundary: Boundary<String, Long> {
 
     override fun sort(list: List<String>) = Collections.sort(list)
 
-    override fun add(a: String, b: Long): String {
-        TODO("Not yet implemented")
-    }
+    override fun add(a: String, b: String): String = a + b
 
-    override fun sub(a: String, b: Long): String {
-        TODO("Not yet implemented")
-    }
+    override fun sub(a: String, b: String): String = a.replace(b, "")
+
+    override fun type(): String =
+        String::class.simpleName!!
 }

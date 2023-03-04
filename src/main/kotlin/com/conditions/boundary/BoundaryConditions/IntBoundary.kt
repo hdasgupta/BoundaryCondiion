@@ -1,8 +1,11 @@
 package com.conditions.boundary.BoundaryConditions
 
+import org.springframework.stereotype.Component
+import java.math.BigInteger
 import java.util.Collections
 import kotlin.math.pow
 
+@Component
 class IntBoundary: BaseBoundary<Int> {
     override fun add(a: Int, b: Int): Int = a + b
 
@@ -33,4 +36,7 @@ class IntBoundary: BaseBoundary<Int> {
     override fun comp(a: Int, b: Int): Long = a.compareTo(b).toLong()
 
     override fun sort(list: List<Int>) = Collections.sort(list)
+
+    override fun type(): String =
+        Int::class.simpleName!!
 }

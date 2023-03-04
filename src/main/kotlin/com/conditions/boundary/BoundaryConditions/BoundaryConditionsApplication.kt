@@ -7,5 +7,8 @@ import org.springframework.boot.runApplication
 class BoundaryConditionsApplication
 
 fun main(args: Array<String>) {
-	runApplication<BoundaryConditionsApplication>(*args)
+	val ac = runApplication<BoundaryConditionsApplication>(*args)
+
 }
+
+

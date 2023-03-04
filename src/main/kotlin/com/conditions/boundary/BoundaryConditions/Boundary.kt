@@ -13,4 +13,6 @@ interface Boundary<T, U> {
     fun ne(a: T, b: T): Boolean
     fun comp(a: T, b: T): Long
     fun sort(list: List<T>)
+
+    fun type(): String
 }
