@@ -7,6 +7,9 @@ class Complex(val n: Double, val i: Double) :Comparable<Complex> {
         else
             i.compareTo(other.i)
 
+    override fun hashCode(): Int =
+        (n+i).hashCode()
+
 
     override fun equals(other: Any?): Boolean =
         if(other is Complex) {
